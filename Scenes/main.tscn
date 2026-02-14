@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://df4neebgb7tst"]
+[gd_scene load_steps=9 format=3 uid="uid://df4neebgb7tst"]
 
 [ext_resource type="PackedScene" uid="uid://d1ictlujnvqxv" path="res://Scenes/godot_head.tscn" id="1_jjgbg"]
 [ext_resource type="Script" uid="uid://n4eu7ffsg83e" path="res://Scripts/camera.gd" id="2_8gbba"]
 [ext_resource type="PackedScene" uid="uid://dfwuwfdv6etab" path="res://Scenes/minigame_launcher.tscn" id="2_bo1nx"]
+[ext_resource type="PackedScene" uid="uid://dih2l8ph4ehta" path="res://Scenes/managers.tscn" id="4_jjvhh"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_bo1nx"]
 sky_top_color = Color(0.4863134, 0.36390412, 0.7362286, 1)
@@ -688,3 +689,5 @@ skeleton = NodePath("../../..")
 transform = Transform3D(-0.83348674, 0.3149484, 0.45399055, 0.35347486, 0.93544406, 0, -0.42468277, 0.16047424, -0.8910065, -7.5899, -1.14, -17.4874)
 mesh = SubResource("BoxMesh_8gbba")
 skeleton = NodePath("../../..")
+
+[node name="Managers" parent="." instance=ExtResource("4_jjvhh")]
