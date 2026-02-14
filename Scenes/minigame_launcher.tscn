@@ -1,0 +1,82 @@
+[gd_scene load_steps=3 format=3 uid="uid://dfwuwfdv6etab"]
+
+[ext_resource type="Script" uid="uid://dko2mwmungvt" path="res://Scripts/minigame_launcher.gd" id="1_ngix6"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sfsbj"]
+bg_color = Color(0.44770002, 0.1554, 0.74, 0.7411765)
+border_width_left = 15
+border_width_top = 15
+border_width_right = 15
+border_width_bottom = 10
+border_color = Color(0.90400004, 0.84000003, 1, 1)
+border_blend = true
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[node name="Minigame_Launcher" type="CanvasLayer"]
+script = ExtResource("1_ngix6")
+
+[node name="Launcher_MarginContainer" type="MarginContainer" parent="."]
+unique_name_in_owner = true
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -186.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/margin_left = 150
+theme_override_constants/margin_right = 150
+
+[node name="PanelContainer" type="PanelContainer" parent="Launcher_MarginContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_sfsbj")
+
+[node name="MarginContainer" type="MarginContainer" parent="Launcher_MarginContainer/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_bottom = 36
+
+[node name="HFlowContainer" type="HFlowContainer" parent="Launcher_MarginContainer/PanelContainer/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/h_separation = 344
+alignment = 1
+
+[node name="Button_Minigame1" type="Button" parent="Launcher_MarginContainer/PanelContainer/MarginContainer/HFlowContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Minigame 1"
+
+[node name="Button_Minigame2" type="Button" parent="Launcher_MarginContainer/PanelContainer/MarginContainer/HFlowContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Minigame 2"
+
+[node name="Button_Minigame3" type="Button" parent="Launcher_MarginContainer/PanelContainer/MarginContainer/HFlowContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Minigame 3"
+
+[node name="MarginContainer2" type="MarginContainer" parent="."]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 42.0
+grow_horizontal = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer2"]
+layout_mode = 2
+
+[node name="Button_Toggle-Menu" type="Button" parent="MarginContainer2/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+toggle_mode = true
+text = "Toggle Menu"

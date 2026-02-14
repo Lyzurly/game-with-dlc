@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://d1ictlujnvqxv"]
+
+[ext_resource type="PackedScene" uid="uid://dpr2km75emf8d" path="res://Blend FIles/Godot_HEAD.blend" id="1_grjaq"]
+
+[node name="Godot_HEAD" instance=ExtResource("1_grjaq")]
+
+[node name="Godot" parent="." index="0"]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
