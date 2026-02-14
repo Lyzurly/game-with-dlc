@@ -1,8 +1,24 @@
-[gd_scene load_steps=2 format=3 uid="uid://d1ictlujnvqxv"]
+[gd_scene load_steps=4 format=3 uid="uid://d1ictlujnvqxv"]
 
 [ext_resource type="PackedScene" uid="uid://dpr2km75emf8d" path="res://Blend FIles/Godot_HEAD.blend" id="1_grjaq"]
+[ext_resource type="Script" uid="uid://b133j1x0ngyg7" path="res://Scripts/minigame_marker.gd" id="2_jhslt"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_grjaq"]
+radius = 0.05
+height = 0.1
 
 [node name="Godot_HEAD" instance=ExtResource("1_grjaq")]
 
 [node name="Godot" parent="." index="0"]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
+
+[node name="MinigameMarkers" type="Node3D" parent="." index="1"]
+
+[node name="minigame_thinking" type="Marker3D" parent="MinigameMarkers" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.33274266, 0.1504243, 0.17875516)
+script = ExtResource("2_jhslt")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="MinigameMarkers/minigame_thinking" index="0"]
+visible = false
+mesh = SubResource("SphereMesh_grjaq")
+skeleton = NodePath("../..")

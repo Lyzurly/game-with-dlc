@@ -12,6 +12,9 @@ var camera_state: CAMERA_STATES = CAMERA_STATES.DEFAULT
 
 var tween: Tween
 
+func _ready() -> void:
+	print(self.name," is ready")
+
 func change_camera_state(state:CAMERA_STATES) -> void:
 	camera_state = state
 	match camera_state:

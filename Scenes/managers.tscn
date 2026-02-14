@@ -1,8 +1,12 @@
-[gd_scene load_steps=2 format=3 uid="uid://dih2l8ph4ehta"]
+[gd_scene load_steps=3 format=3 uid="uid://dih2l8ph4ehta"]
 
 [ext_resource type="Script" uid="uid://h5yowhdxc0no" path="res://Scripts/manage_minigames.gd" id="1_7yvbx"]
+[ext_resource type="Script" uid="uid://fwcx140abcqb" path="res://Scripts/manage_minigame_markers.gd" id="2_nrf46"]
 
 [node name="Managers" type="Node"]
 
 [node name="ManageMinigames" type="Node" parent="."]
 script = ExtResource("1_7yvbx")
+
+[node name="ManageMinigameMarkers" type="Node" parent="."]
+script = ExtResource("2_nrf46")

@@ -10,6 +10,7 @@ extends CanvasLayer
 func _ready() -> void:
 	_ready_launcher()
 	_ready_connections()
+	print(self.name," is ready")
 	
 func _ready_launcher() -> void:
 	_on_menu_toggled(false)
