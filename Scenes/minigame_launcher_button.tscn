@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://b45pux6p54s4q"]
+
+[node name="Button_Minigame1" type="Button"]
+theme_override_font_sizes/font_size = 30
+toggle_mode = true
+text = "Minigame 1"

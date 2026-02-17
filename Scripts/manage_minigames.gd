@@ -9,6 +9,9 @@ const _CALLBACK_GET_MINIGAME_DATA: String = \
 	"get_minigame_data"
 const _CALLBACK_GET_MINIGAME_SCENE_PATH: String = \
 	"get_minigame_scene_path"
+
+## "minigame_name": "minigame_path"
+var _loadable_minigames: Dictionary[String,String] = {}
 	
 var current_minigame_node: Node
 
@@ -16,24 +19,39 @@ func _ready() -> void:
 	_ready_minigames()
 	
 func _ready_minigames() -> void:
-	var minigame_directory = DirAccess.open(_MINIGAME_DIRECTORY)
-	for minigame_path: String in minigame_directory.get_files():
-		if minigame_path.ends_with(_PCK_STRING):
-			_load_minigame(minigame_path)
+	var minigame_directory: DirAccess = \
+		DirAccess.open(_MINIGAME_DIRECTORY)
+	for minigame_file_name: String in minigame_directory.get_files():
+		if minigame_file_name.ends_with(_PCK_STRING):
+			_ready_minigame(minigame_file_name)
 
-func _load_minigame(minigame_path: String) -> void:
-	var full_minigame_path: String = _MINIGAME_DIRECTORY + minigame_path
+func _ready_minigame(minigame_file_name: String) -> void:
+	var full_minigame_path: String = \
+		_MINIGAME_DIRECTORY + minigame_file_name
+	var minigame_name: String = \
+		minigame_file_name.trim_suffix(_PCK_STRING)
+	_loadable_minigames.get_or_add(minigame_name,full_minigame_path)
+	
+func get_minigame_data() -> Dictionary[String,String]:
+	return _loadable_minigames
+		
+func activate_minigame(indeed: bool,minigame_name: String) -> void:
+	if indeed:
+		var full_minigame_path: String = \
+			_loadable_minigames[minigame_name]
+		_load_minigame(minigame_name,full_minigame_path)
+	else:
+		pass
+		
+		
+func _load_minigame(minigame_name:String,full_minigame_path: String) -> void:
 	var minigame_loaded: bool = \
 	ProjectSettings.load_resource_pack(
 		full_minigame_path)
 	if minigame_loaded:
-		print("Successfully loaded minigame from ",minigame_path)
+		print("Successfully loaded minigame from ",full_minigame_path)
 	else:
 		push_error("Could not load file at ",full_minigame_path)
-	
-	## E.g. "minigame_thinking"
-	var minigame_name: String = \
-		minigame_path.trim_suffix(_PCK_STRING)
 	
 	## E.g. "res://minigame_thinking/minigame_thinking.gd"
 	var minigame_script_path: String = \
@@ -81,3 +99,5 @@ minigame_dir_name: String,
 	var marker_pos: Vector3 = Vector3(
 		minigame_marker.global_position)
 	current_minigame_node.global_position = marker_pos
+	
+	MinigameLauncher.ref.repopulate_tree()
