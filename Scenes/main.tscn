@@ -19,6 +19,12 @@ sky_material = SubResource("ProceduralSkyMaterial_bo1nx")
 background_mode = 2
 sky = SubResource("Sky_8gbba")
 tonemap_mode = 2
+fog_enabled = true
+fog_light_color = Color(0.3150567, 0.2679, 0.47, 1)
+fog_light_energy = 1.71
+fog_density = 0.1886
+fog_aerial_perspective = 0.444
+fog_sky_affect = 0.946
 
 [node name="Node3D" type="Node3D"]
 
@@ -27,7 +33,7 @@ tonemap_mode = 2
 [node name="Managers" parent="." instance=ExtResource("4_jjvhh")]
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.194, 1.4547)
+transform = Transform3D(1, 0, 0, 0, 0.9135454, 0.40673664, 0, -0.40673664, 0.9135454, 0, 0.692, 2.1427)
 fov = 53.0
 size = 1.12
 script = ExtResource("2_8gbba")
@@ -44,4 +50,4 @@ shadow_enabled = true
 [node name="Minigame_Launcher" parent="." instance=ExtResource("2_bo1nx")]
 
 [node name="bg" parent="." instance=ExtResource("5_kry3j")]
-transform = Transform3D(1.056, 0, 0, 0, 1.0553567, 0.036853865, 0, -0.036853865, 1.0553567, -0.5084, 3.0846, 13.8763)
+transform = Transform3D(1.8102, 0, 0, 0, 1.7329397, 0.5232053, 0, -0.5232053, 1.7329397, -0.5084, 14.139, 18.9827)

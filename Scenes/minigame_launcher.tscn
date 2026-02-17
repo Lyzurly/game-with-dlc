@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://dfwuwfdv6etab"]
+[gd_scene load_steps=3 format=3 uid="uid://dfwuwfdv6etab"]
 
 [ext_resource type="Script" uid="uid://dko2mwmungvt" path="res://Scripts/minigame_launcher.gd" id="1_ngix6"]
 
@@ -14,9 +14,6 @@ corner_radius_top_left = 20
 corner_radius_top_right = 20
 corner_radius_bottom_right = 20
 corner_radius_bottom_left = 20
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ngix6"]
-bg_color = Color(0.19811788, 0.113457315, 0.2498512, 1)
 
 [node name="Minigame_Launcher" type="CanvasLayer"]
 script = ExtResource("1_ngix6")
@@ -69,11 +66,3 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 24
 toggle_mode = true
 text = "Toggle Menu"
-
-[node name="FileSystem_Tree" type="Tree" parent="."]
-unique_name_in_owner = true
-anchors_preset = 9
-anchor_bottom = 1.0
-offset_right = 251.0
-grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_ngix6")

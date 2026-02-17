@@ -1,7 +1,44 @@
-[gd_scene load_steps=4 format=3 uid="uid://d1ictlujnvqxv"]
+[gd_scene load_steps=7 format=3 uid="uid://d1ictlujnvqxv"]
 
 [ext_resource type="PackedScene" uid="uid://dpr2km75emf8d" path="res://Blend FIles/Godot_HEAD.blend" id="1_grjaq"]
 [ext_resource type="Script" uid="uid://b133j1x0ngyg7" path="res://Scripts/minigame_marker.gd" id="2_jhslt"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jhslt"]
+resource_name = "Material.011"
+cull_mode = 2
+disable_fog = true
+albedo_color = Color(0.31832552, 0.5305108, 0.67378587, 1)
+roughness = 0.5
+metadata/extras = {
+"yp": {
+"active_ypaint_node": "",
+"expand_content": 0.0
+}
+}
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bqyxu"]
+resource_name = "Material.012"
+cull_mode = 2
+disable_fog = true
+albedo_color = Color(0.20327301, 0.20327301, 0.20327301, 1)
+metadata/extras = {
+"yp": {
+"active_ypaint_node": "",
+"expand_content": 0.0
+}
+}
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_83cob"]
+resource_name = "Material.013"
+cull_mode = 2
+disable_fog = true
+roughness = 0.5
+metadata/extras = {
+"yp": {
+"active_ypaint_node": "",
+"expand_content": 0.0
+}
+}
 
 [sub_resource type="SphereMesh" id="SphereMesh_grjaq"]
 radius = 0.05
@@ -11,6 +48,9 @@ height = 0.1
 
 [node name="Godot" parent="." index="0"]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
+surface_material_override/0 = SubResource("StandardMaterial3D_jhslt")
+surface_material_override/1 = SubResource("StandardMaterial3D_bqyxu")
+surface_material_override/2 = SubResource("StandardMaterial3D_83cob")
 
 [node name="MinigameMarkers" type="Node3D" parent="." index="1"]
 
