@@ -24,10 +24,6 @@ var current_minigame_node: Node
 
 func _ready() -> void:
 	_ready_minigames()
-	#_ready_minigames_virtual()
-	
-func _ready_minigames_virtual() -> void:
-	_ready_minigame("minigame_thinking.pck")
 	
 func _ready_minigames() -> void:
 	var minigame_directory: DirAccess = \
